@@ -1,7 +1,9 @@
 package java19;
 
 public class Calculator {
-	//나는 또 올라갈거예요.git으로!
+	//나는 또 올라갈거예요. git으로!
+	//또 올라가요 2번째로!!!
+	
 	public void use() {
 		System.out.println("===사용가능합니다.");
 	}

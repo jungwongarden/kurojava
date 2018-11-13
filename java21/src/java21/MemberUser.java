@@ -19,7 +19,7 @@ public class MemberUser {
 		Member mem3 = 
 				new Member("siteManager", "sitepass", "준관리자", 1800);
 		
-		System.out.println(mem3);
+		System.out.println("mem3" + mem3);
 		
 		
 		

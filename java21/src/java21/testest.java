@@ -1,5 +1,5 @@
 package java21;
 
 public class testest {
-	int abc = 1;
+	int abc = 1;//
 }

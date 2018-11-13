@@ -1,10 +1,16 @@
 package java21;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 public class SwingTest2 {
 
 	public SwingTest2() {
-		//내가 바로 처리될 코드들...
-		//나야 나...
+		JFrame f = new JFrame();
+		JButton[]	buttons = new JButton[100];
+		for (int i = 0; i < buttons.length; i++) {
+			buttons[i] = new JButton(i+"");
+		}
 	}
 	public static void main(String[] args) {
 		SwingTest2 swing = new SwingTest2();

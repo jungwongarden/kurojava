@@ -4,12 +4,12 @@ public class Bus extends Car{
 	int person;
 	
 	public void station() {
-		System.out.println("ÅÍ¹ÌÅĞ¿¡ ¼­´Ù.");
+		System.out.println("ì •ë¥˜ì¥ì— ì„œë‹¤.");
 	}
 
 	@Override
 	public String toString() {
-		return "Bus [person=" + person + "]";
+		return person + ", " + color + " , " + speed; 
 	}
 	
 	

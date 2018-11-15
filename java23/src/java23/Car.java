@@ -6,11 +6,11 @@ public class Car {
 	
 	
 	public void start() {
-		System.out.println("ÀÚµ¿Â÷°¡ Ãâ¹ßÇÏ´Ù.");
+		System.out.println("ìë™ì°¨ê°€ ë‹¬ë¦¬ê¸° ì‹œì‘í•˜ë‹¤.");
 	}
 	
 	public void stop() {
-		System.out.println("ÀÚµ¿Â÷°¡ ¸ØÃß´Ù.");
+		System.out.println("ìë™ì°¨ê°€ ë‹¬ë¦¬ê¸° ë©ˆì¶”ë‹¤.");
 	}
 	
 	

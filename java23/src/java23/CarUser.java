@@ -12,7 +12,7 @@ public class CarUser {
 		truck.move(); //Truck
 		truck.stop(); //Car
 		
-		
+		System.out.println(truck);
 		
 		
 		

@@ -1,6 +1,6 @@
 package java23;
 
-public class Speaker {
+public class Speaker extends Object {
 	int soundSize;
 	String color;
 	

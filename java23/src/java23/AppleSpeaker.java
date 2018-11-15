@@ -9,6 +9,4 @@ public class AppleSpeaker extends Speaker{
 	public String toString() {
 		return "AppleSpeaker [shape=" + shape + ", soundSize=" + soundSize + ", color=" + color + "]";
 	}
-	
-	
 }

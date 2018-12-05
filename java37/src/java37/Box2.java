@@ -32,9 +32,6 @@ public class Box2<X, Y> {
 		return getX();
 	}
 	
-	
-	
-	
 	@Override
 	public String toString() {
 		return "Box2 [x=" + x + ", y=" + y + "]";

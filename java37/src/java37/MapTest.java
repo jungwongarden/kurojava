@@ -2,6 +2,8 @@ package java37;
 
 import java.util.HashMap;
 
+
+//map test.
 public class MapTest {
 
 	public static void main(String[] args) {
@@ -14,7 +16,5 @@ public class MapTest {
 		System.out.println(map);
 		String value = (String)map.get(100);
 		System.out.println("100 아이디의 이름은 " + value);
-		
 	}
-
 }

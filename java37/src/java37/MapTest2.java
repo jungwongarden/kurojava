@@ -17,10 +17,5 @@ public class MapTest2 {
 		Student s11 = (Student)students.get(100);
 		System.out.println(students);
 		System.out.println(s11);
-		
-		
-		
-		
 	}
-
 }

@@ -13,15 +13,5 @@ public class MapTest3 {
 		
 		Student s11 = students.get(100);
 		System.out.println(s11);
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
-
 }

@@ -13,6 +13,4 @@ public class Box<K, V> {
 	public String toString() {
 		return "Box [n1=" + n1 + ", n2=" + n2 + "]";
 	}
-	
-	
 }

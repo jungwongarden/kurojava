@@ -3,7 +3,7 @@ package java37;
 import java.util.HashMap;
 
 
-//map test2.
+//map test4.
 public class MapTest {
 
 	public static void main(String[] args) {

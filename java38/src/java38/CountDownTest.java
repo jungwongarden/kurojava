@@ -52,7 +52,7 @@ public class CountDownTest extends JFrame {
 		public MyThread1(String name) {
 			this.name = name;
 		}
-		//나야..새로운 거..테스트..
+		//나야..새로운 거..테스트..2..
 		public void run() {
 			int i = 5000;
 			while(true) {

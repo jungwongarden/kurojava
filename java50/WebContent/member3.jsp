@@ -21,17 +21,21 @@
 %>
 <jsp:getProperty property="id" name="dto"/>
 
-<%-- <%@ page import="bean.MemberDTO"%>
-<%@ page import="bean.MemberDAO"%>
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
-		String tel = request.getParameter("tel");
-		MemberDTO dto = new MemberDTO();
-		dto.setId(id);
-		dto.setPw(pw);
-		dto.setName(name);
-		dto.setTel(tel); --%>	
+<%-- <jsp:useBean id="dto" class="bean.MemberDTO"/>
+<%@ page import="bean.MemberDTO"%>
+MemberDTO dto = new MemberDTO();
+-------------------------------------------
+<jsp:setProperty name="dto" property="*" />
+String id = request.getParameter("id");
+String pw = request.getParameter("pw");
+String name = request.getParameter("name");
+String tel = request.getParameter("tel");
+dto.setId(id);
+dto.setPw(pw);
+dto.setName(name);
+dto.setTel(tel); --%>
+
+
 	<center>
 		<font color="blue" size="6">회원가입 확인</font>
 		<hr>

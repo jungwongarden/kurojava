@@ -1,3 +1,5 @@
+<%@ page import="bean.MemberDTO"%>
+<%@ page import="bean.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%-- jsp주석 : include지시자
@@ -16,6 +18,16 @@
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
+		
+		/* jsp 자동import 컨트롤+쉬프트+m */
+		
+		MemberDAO dao = new MemberDAO();
+		MemberDTO dto = new MemberDTO();
+		dto.setId(id);
+		dto.setPw(pw);
+		dto.setName(name);
+		dto.setTel(tel);
+		dao.insert(dto);
 	%>
 	<center>
 		<font color="blue" size="6">회원가입 확인</font>

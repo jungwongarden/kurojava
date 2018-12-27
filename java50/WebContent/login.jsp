@@ -12,8 +12,7 @@
 	/* request객체는 클라이언트--->서버 "받는 객체" */
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
-	
-	
+		
 	%>	
 	<h1>회원 인증을 요청하셨습니다.</h1>
 	<hr>

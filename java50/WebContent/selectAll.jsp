@@ -34,15 +34,15 @@
 	</tr>
 	<%	
 	}
-	/* for(int i = 0; i < list.size(); i++){
+	%>
+	<!--  for(int i = 0; i < list.size(); i++){
 		MemberDTO dto = list.get(i);
 		out.print("id: " + dto.getId() + ",&nbsp;");
 		out.print("pw: " + dto.getPw()  + ",&nbsp;");
 		out.print("name: " + dto.getName()  + ",&nbsp;");
 		out.print("tel: " + dto.getTel()  + "&nbsp;");
 		out.print("<br>");
-	} */
-%>
+	}  -->
 </table>
 
 

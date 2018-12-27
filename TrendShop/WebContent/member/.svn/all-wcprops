@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member
+END
+sub_menu.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/sub_menu.html
+END
+member.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/member.js
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/login.jsp
+END
+idcheck.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/idcheck.jsp
+END
+contract.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/contract.jsp
+END
+sub_img.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/sub_img.html
+END
+join.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/join.jsp
+END
+findIdAndPassword.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/findIdAndPassword.jsp
+END
+findZipNum.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/findZipNum.jsp
+END
+login_fail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/bckicox1/!svn/ver/75/nonageshop/WebContent/member/login_fail.jsp
+END

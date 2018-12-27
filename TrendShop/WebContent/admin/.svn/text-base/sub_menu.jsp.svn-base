@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<nav id="sub_menu">
+<h1>Admin Setting</h1>
+<ul>
+<li><a href='../product/product_list.jsp' target='main'> 상품리스트</a></li>
+<li><a href='../order/order_list.jsp' target='main'> 주문리스트</a></li>
+<li><a href='../member/member_list.jsp' target='main'> 회원리스트</a></li>
+<li><a href='../qna/qna_list.jsp' target='main'> Q&amp;A 리스트</a></li>
+</ul>
+</nav>

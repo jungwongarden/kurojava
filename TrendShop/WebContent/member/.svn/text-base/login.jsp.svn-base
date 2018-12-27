@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>	
+<%@ include file="../header.jsp" %>	
+<%@ include file="sub_img.html"%> 
+<%@ include file="sub_menu.html" %>       
+<article>
+	<h1>Login</h1>
+	<form method="post" action="NonageServlet?command=login">
+			<fieldset>
+			<legend></legend>
+				<label>User ID</label>
+				<input name="id" type="text" value="${loginUser.id}" value="one"><br> 
+				<label>Password</label> 
+				<input name="pwd" type="password" value="1111"><br> 
+			</fieldset>
+			<div class="clear"></div>
+			<div id="buttons">
+					<input type="submit" value="로그인" class="submit">
+					<input type="button" value="회원가입" class="cancel"
+					     onclick="location='NonageServlet?command=join_form'">
+					<input type="button" value="아이디 비밀번호 찾기" class="submit"
+					     onclick="location='NonageServlet?command=find_id_form'">     
+			</div>
+	</form>	
+</article>
+<%@ include file="../footer.jsp" %>			

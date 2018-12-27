@@ -1,0 +1,79 @@
+<%@page import="com.nonage.dao.OrderDAO"%>
+<%@page import="com.nonage.dto.OrderVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.nonage.dao.MemberDAO"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ include file="../common/session_chk.jsp" %>
+<%
+	request.setCharacterEncoding("euc-kr");
+SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+String key="";
+if(request.getParameter("key")!=null)
+	key=request.getParameter("key");
+%>	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="CSS/subpage.css">
+<script type="text/javascript">
+  function go_search()
+  {
+     document.frm.action="./order_list.jsp";
+     document.frm.submit();
+  }
+</script>
+</head>
+<body>
+<%@ include file="../common/header.jsp"%>
+<%@ include file="../sub_menu.jsp"%>
+<article>
+<h1>주문리스트</h1>
+<form name="frm" method="post">
+<table style="float:right; ">
+	<tr>
+	<td> 
+	주문자 이름
+	<input type="text" name="key">
+	<input class="btn" type="button" value="검색" onclick="go_search()">
+	</td>
+	</tr>
+</table>
+<br>
+<table id="orderList">
+	<tr>
+		<th> 주문번호(처리여부) </th>		<th> 주문자 </th>	<th> 상품명</th>		
+		<th> 수량 </th>		<th> 우편번호 </th>	
+		<th> 배송지 </th>		<th> 전화 </th>		<th> 주문일 </th>
+	</tr>
+		<%
+			OrderDAO db=OrderDAO.getInstance();
+			ArrayList<OrderVO> list=db.listOrder(key);
+			int n=list.size();
+			for(int num=1; num<=n; num++){
+			   OrderVO order=list.get(num-1);
+		%>
+			<tr>
+			<td> <%=order.getOseq()%> 
+				<input type="checkbox" name="result">
+			</td>
+			<td> <%=order.getMname()%> </td>
+			<td> <%=order.getPname()%> </td>
+			<td> <%=order.getQuantity()%> </td>
+			<td> <%=order.getZipNum()%> </td>
+			<td> <%=order.getAddress()%> </td>
+			<td> <%=order.getPhone()%> </td>
+			<td> <%=sdf.format(order.getIndate())%> </td>
+			</tr>
+			<%
+		}
+		%>
+		</table>
+		</form>		
+	</article>
+	<%@ include file="../common/footer.jsp"%>
+</body>
+</html>

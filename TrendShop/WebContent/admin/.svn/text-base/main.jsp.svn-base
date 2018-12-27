@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=EUC-KR" />
+
+<link rel="stylesheet" href="admin/CSS/default.css">
+<link rel="stylesheet" href="admin/CSS/image.css">
+<link rel="stylesheet" href="admin/CSS/subpage.css">
+<script type="text/javascript">
+function worker_check()
+{
+	if(document.frm.workId.value==""){
+  		alert("아이디를 입력하세요.");
+  		return false;
+	}else if(document.frm.workPw.value==""){
+	 	alert("비밀번호를 입력하세요.");
+  		return false;
+  	}
+  	return true;	
+}
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>			
+			<div id="logo">
+				<a href="admin/main.jsp"> 
+				<img src="admin/images/bar_01.gif" style="float:left"><img src="admin/images/text.gif">
+				</a>
+			</div>			
+		</header>
+		<div class="clear"></div>
+	    <article>
+	    <div id="loginform">
+		<form name="frm" method="post" action="admin/worker/worker_check.jsp">
+			<table>
+				<tr>
+					<td style="height:30pt; text-align: center;" colspan="2">
+						<b> 업무 로그인 </b>
+					</td>
+				</tr>
+				<tr>
+					<td>아 이 디</td>
+					<td><input type="text" name="workId" size="10" value="admin"></td>
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="password" name="workPw" size="10" value="admin"></td>
+				</tr>
+				<tr align="center" >
+					<td  colspan="2">
+					<input class="btn" type="button" value="신규 등록" onclick="location.href='../worker/worker_new.jsp'">
+					<input class="btn" type="submit" value="확인" onclick="return worker_check()">
+					</td>
+				</tr>
+			</table>
+		</form>
+    	</div>
+	    </article>
+	
+		<div class="clear"></div>
+		<footer>
+			<hr>
+			<div id="copy">
+			
+				All contents Copyright 2013 K C Inc. all rights reserved<br>
+				Contact mail : wze123@daum.net Tel: +82 64 123 4315 Fax +82 64 123	4321
+				
+			</div>
+		</footer>
+	</div>

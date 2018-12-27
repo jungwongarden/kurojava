@@ -16,7 +16,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 import java.awt.Label;
 
-public class MyWindow extends JFrame{
+public class MyWindow extends JFrame {
 	JButton	b1 = new JButton("나는 버튼이야...나를 눌러..");
 	
 	public MyWindow() {

@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>	
+<%@ include file="../header.jsp" %>	
+<%@ include file="sub_img.html"%> 
+<%@ include file="sub_menu.html" %>       
+<article>
+      <h1> Item </h1>
+      <div id="itemdetail" >
+      <form  method="post" name="formm">		
+		<fieldset>
+			<legend> Item detail Info</legend>	
+				<a href="NonageServlet?command=product_detail&pseq=${productVO.pseq}">			   
+				<span style="float: left;">
+			   	 	<img  src="product_images/${productVO.image}"  />
+			    </span>			  	    
+				<h2> ${productVO.name} </h2>	
+				</a>		
+				<label> �ǸŰ� :  </label>	
+				<p> ${productVO.price2} ��</p>	
+			    <label> �� �� : </label>
+			    <input  type="text"        name="quantity"  size="2"      value="1"><br>
+			    <input  type="hidden"    name="pseq"       value="${productVO.pseq}"><br>
+		</fieldset>
+
+		<div class="clear"></div>
+		<div id="buttons">
+			<input type="button"    value="��ٱ��Ͽ� ���"   class="submit"    onclick="go_cart()"> 
+			<input type="button"    value="��� ����"           class="submit"    onclick="go_order()"> 
+			<input type="reset"      value="���"                 class="cancel">
+		</div>
+	</form>	
+				</div>
+</article>
+<%@ include file="../footer.jsp" %>		

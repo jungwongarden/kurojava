@@ -1,0 +1,56 @@
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="java.io.File"%>
+<%@page import="com.nonage.dto.ProductVO"%>
+<%@page import="com.nonage.dao.ProductDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="../common/session_chk.jsp" %>    
+<%
+String productCd=request.getParameter("cd");  //상품 코드 값 얻어 오기
+
+File f=null;
+int sizeLimit=5*1024*1024;
+String savePath=getServletContext().getRealPath("product_images");
+System.out.println(savePath);
+MultipartRequest multi = new MultipartRequest(
+	     request,    //1. 요청 객체 
+	     savePath,   //2. 업로드될 파일이 저장될 파일 경로명
+	     sizeLimit,   //3. 업로드될 파일의 최대 크기(5Mb)
+	     "euc-kr",    //4. 인코딩 타입 지정
+	     new DefaultFileRenamePolicy()  //5. 덮어쓰기를 방지 위한 부분 
+);  //이 시점을 기해 파일은 이미 저장이 되었다
+ProductVO productVO=new ProductVO();
+productVO.setKind(multi.getParameter("productKind"));
+productVO.setName(multi.getParameter("productNm"));
+productVO.setPrice1(Integer.parseInt(multi.getParameter("price1")));
+productVO.setPrice2(Integer.parseInt(multi.getParameter("price2")));
+productVO.setPrice3(Integer.parseInt(multi.getParameter("price2"))
+		            -Integer.parseInt(multi.getParameter("price1")));
+productVO.setContent(multi.getParameter("content"));
+productVO.setImage(multi.getFilesystemName("fileImage"));
+
+ProductDAO productDAO=ProductDAO.getInstance();
+int msg=productDAO.insertProduct(productVO, session_id);
+//msg 1: 정상저장 -1: 오류발생
+%>
+<form name="resultForm" method="post">
+</form>
+<%
+if(msg > 0 ){
+%>
+	<script type="text/javascript">
+	  document.resultForm.action="./product_list.jsp";
+	  document.resultForm.submit();
+	</script>
+<%
+}else {
+%>
+	<script type="text/javascript">
+	  alert('오류가 발생했습니다.');
+	  document.resultForm.action="./product_in.jsp";
+	  document.resultForm.submit();
+	</script>
+<%
+}
+%>

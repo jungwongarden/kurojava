@@ -1,0 +1,17 @@
+insert into book values (100, 1000);
+insert into book values (200, 2000);
+insert into book values (300, 3000);
+insert into book values (400, 4000);
+insert into book values (500, 5000);
+
+select * from book;
+
+insert into storage values (1, 100);
+insert into storage values (2, 200);
+insert into storage values (3, 300);
+--insert into storage values (3, 600); //에러.
+
+select book.bid, book.price, storage.sid 
+from  book, storage
+where book.bid = storage.bid;
+

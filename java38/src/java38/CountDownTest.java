@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Set;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -51,6 +53,9 @@ public class CountDownTest extends JFrame {
 		
 		public MyThread1(String name) {
 			this.name = name;
+			
+			
+			
 		}
 		//나야..새로운 거..테스트..2..
 		public void run() {

@@ -1,0 +1,144 @@
+drop table orders;
+drop table products;
+drop table worker;
+drop table member;
+
+create table member(   
+    id        varchar2(20)     primary key,
+    pwd        varchar2(20),     
+    name       varchar2(30),
+    email      varchar2(30),
+    zip_num    varchar2(7),
+    address    varchar2(100),
+    phone      varchar2(20),
+    useyn      char(1)          default 'y',
+    indate     date             default sysdate
+);
+
+create table worker(          
+    id          varchar2(20)     primary key,
+    pwd         varchar2(20),
+    name        varchar2(40),
+    phone       varchar2(40)
+);
+
+create table products(
+    pseq       number(5)        primary key,
+    name       varchar2(100),
+    kind       char(1),   
+    price1     number(7)        default '0',
+    price2     number(7)        default '0',
+    price3     number(7)        default '0',
+    content    varchar2(1000),
+    image      varchar2(50)   default 'default.jpg',
+    useyn      char(1)          default 'y',
+    bestyn     char(1)          default 'n',
+    indate     date             default sysdate  
+);
+
+-- 장바구니 
+CREATE TABLE cart (
+  cseq number(10)             PRIMARY KEY,  -- 장바구니 시퀀스
+  id            varchar(16)      references member(id),                       -- 주문자 아이디(FK :　member.id) 
+  pseq        number(5)        references products(pseq),                     -- 주문 상품 시퀀스(FK :products.pseq) 
+  quantity    number(5)        default 1,                  -- 주문 수량
+  result       char(1)             default '1',      -- 1: 처리 2: 미처리
+  indate      date                default SYSDATE      -- 주문일
+);
+
+create table orders(
+  oseq        number(10)      PRIMARY KEY,                 -- 주문 시퀀스
+  id            varchar(16)       references member(id),      -- 주문자 아이디
+  pseq        number(5)        references products(pseq),  -- 상품 시퀀스
+  quantity    number(5)       default 1,                   -- 주문 수량
+  result        char(1)            default '1',                     -- 1: 미처리 2: 처리 
+  indate       date               default sysdate              -- 주문일
+);
+
+drop sequence products_seq;
+drop sequence  cart_seq;
+drop sequence orders_seq;
+
+create sequence products_seq start with 1;
+create sequence orders_seq start with 1;
+create sequence  cart_seq start with 1;
+
+insert into worker values('admin', 'admin', '홍관리', '010-777-7777');
+insert into worker values('pinksung', 'pinksung', '명강사', '010-999-9696');
+
+insert into member(id, pwd, name, zip_num, address, phone) values
+('one', '1111', '김나리', '133-110', '서울시성동구성수동1가 1번지21호', '017-777-7777');
+insert into member(id, pwd, name, zip_num, address, phone) values
+('two', '2222', '이백합', '130-120', '서울시송파구잠실2동 리센츠 아파트 201동 505호', '011-123-4567');
+
+INSERT INTO products(pseq, name, kind, price1, price2, price3, content, image) 
+VALUES(products_seq.nextval, '크로그다일부츠', '2', '40000', '50000', '10000', '오지니랄 크로그다일부츠 입니다.', 'w2.jpg');
+INSERT INTO products(pseq, name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval, '롱부츠', '2', 40000, 50000, 10000,'따뜻한 롱부츠 입니다.', 'w-28.jpg', 'n');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES( 
+products_seq.nextval, '힐', '1', '10000', '12000', '2000', '여성용전용 힐', 'w-26.jpg', 'n');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval, '슬리퍼', '4', '5000', '5500', '500', '편안한 슬리퍼입니다.', 'w-25.jpg', 'y');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval, '회색힐', '1', '10000', '12000', '2000', '여성용전용 힐', 'w9.jpg', 'n');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image) VALUES(
+products_seq.nextval, '여성부츠', '2', '12000', '18000', '6000', '여성용 부츠', 'w4.jpg');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval,  '핑크샌달', '3', '5000', '5500', '500', '사계절용 샌달입니다.', 'w-10.jpg', 'y');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval, '슬리퍼', '3', '5000', '5500', '500', '편안한 슬리퍼입니다.', 'w11.jpg', 'y');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image) VALUES(
+products_seq.nextval,  '스니커즈', '4', '15000', '20000', '5000', '활동성이 좋은 스니커즈입니다.', 'w1.jpg');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval,  '샌달', '3', '5000', '5500', '500', '사계절용 샌달입니다.', 'w-09.jpg','n');
+INSERT INTO products(pseq,  name, kind, price1, price2, price3, content, image, bestyn) VALUES(
+products_seq.nextval,  '스니커즈', '5', '15000', '20000', '5000', '활동성이 좋은 스니커즈입니다.', 'w-05.jpg','n');
+
+
+INSERT INTO cart(cseq,id, pseq, quantity) VALUES(CART_SEQ.NEXTVAL, 'one', 1, 1);
+
+
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'one', 1, 2);
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'one', 2, 5);
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'one', 4, 3);
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'two', 3, 1);
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'two', 2, 1);
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'two', 6, 2);
+insert into orders(oseq, id, pseq, quantity) values(orders_seq.nextval, 'two', 1, 2);
+commit;
+
+create or replace view o_m_p_view
+as
+select o.oseq, o.id, o.pseq, m.name mname, p.name pname, o.quantity, m.zip_num, m.address, m.phone, o.indate 
+from orders o, member m, products p 
+where o.id = m.id and o.pseq = p.pseq
+and result='1';
+
+SELECT * FROM cart_view order by cseq desc;
+
+create or replace view cart_view
+as
+select o.cseq, o.id, o.pseq, m.name mname, p.name pname, o.quantity, o.indate 
+from cart o, member m, products p 
+where o.id = m.id and o.pseq = p.pseq
+and result='1';
+
+-- 신상품
+SELECT PSEQ, NAME, PRICE2, IMAGE 
+FROM(   SELECT ROWNUM, PSEQ,NAME, PRICE2, IMAGE
+		FROM  PRODUCTS  
+        WHERE USEYN='y' 
+        ORDER BY indate DESC)
+WHERE  ROWNUM <=3
+            
+-- 베스트 상품
+SELECT PSEQ, NAME, PRICE2, IMAGE 
+FROM( SELECT ROWNUM, PSEQ, NAME, PRICE2, IMAGE 
+      FROM PRODUCTS  
+      WHERE bestyn='y' 
+      ORDER BY indate DESC)
+WHERE  ROWNUM <=3
+
+
+
+

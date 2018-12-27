@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>	
+<%@ include file="../header.jsp" %>	
+<%@ include file="sub_img.html"%> 
+<%@ include file="sub_menu.html" %>       
+<article>
+      <h2> Item</h2>	   
+	   <c:forEach items="${productKindList }"  var="productVO">
+			<div id="item">
+			    <img src="product_images/${productVO.image}" />
+				<h3><a href="NonageServlet?command=product_detail&pseq=${productVO.pseq}"> ${productVO.name} </a></h3>				
+				<p>${productVO.price2} </p>
+			</div>
+		</c:forEach>		
+	   <div class="clear"></div>
+</article>
+<%@ include file="../footer.jsp" %>		

@@ -1,0 +1,8 @@
+<nav id="sub_menu">
+<ul>
+<li><a href="NonageServlet?command=login_form">Login</a></li>
+<li><a href="NonageServlet?command=contract">Join us</a></li>
+</ul>
+</nav>
+
+

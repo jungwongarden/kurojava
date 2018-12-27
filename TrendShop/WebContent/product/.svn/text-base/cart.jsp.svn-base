@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>	
+<%@ include file="../header.jsp" %>	
+<%@ include file="sub_img.html"%> 
+<%@ include file="sub_menu.html" %>       
+<article>
+      <h1> Cart List </h1>
+		 <c:forEach items="${cartList }"  var="cartVO">
+			<div id="item">
+			    <a href="NonageServlet?command=product_detail&pseq=${cartVO.pseq}">
+			      <h3> ${cartVO.pname} </h3>				    	
+				</a>		
+				${cartVO.mname} 	
+			</div>
+		   </c:forEach>			
+		<div class="clear"></div>
+		<div id="buttons">
+			<input type="button"    value="쇼핑 계속하기"   class="submit"    onclick="location.href='NonageServlet?command=index'"> 
+			<input type="button"    value="즉시 구매"           class="submit"    onclick="go_order()"> 
+			<input type="reset"      value="취소"                 class="cancel">
+		</div>
+</article>
+<%@ include file="../footer.jsp" %>		

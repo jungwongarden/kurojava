@@ -1,0 +1,99 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.nonage.dto.ProductVO"%>
+<%@page import="com.nonage.dao.ProductDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ include file="../common/session_chk.jsp" %>
+<%
+request.setCharacterEncoding("euc-kr");
+SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd  HH:mm");
+String key=request.getParameter("key");
+if(key==null){
+ key="";
+}
+
+String tpage=request.getParameter("tpage");
+if(tpage== null){
+	tpage="1"; //현재 페이지 (default 1)                        
+}else if(tpage.equals("")){
+ 	tpage="1";  
+}
+String view = "미사용";
+
+System.out.println("key="+key);
+System.out.println("tpage="+tpage);
+%>	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="product.js"></script>
+</head>
+<body>
+<%@ include file="../common/header.jsp"%>
+<%@ include file="../sub_menu.jsp"%>
+<article>
+<h1>상품리스트</h1>	
+<form name="frm" method="post">
+<input type="hidden" name="seq">
+<table>
+  <tr>
+  <td width="642">
+     상품명 
+     <input type="text" name="key">
+     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
+     <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">
+     <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()" style="float: right;">
+  </td>
+  </tr>
+</table>
+
+<table id="productList">
+    <tr>
+        <th>번호</th><th>상품명</th><th>원가</th><th>판매가</th><th>등록일</th><th>유무</th>
+    </tr>
+    <%
+  ProductDAO productDAO=ProductDAO.getInstance();
+  java.util.ArrayList<ProductVO> productList=productDAO.listProduct(Integer.parseInt(tpage), key);
+  ProductVO productVO;  
+  int n=productList.size();   
+  if(n<=0){
+%> 
+    <tr>
+      <td width="100%" colspan="7" align="center" height="23">
+        등록된 상품이 없습니다.
+      </td>
+    </tr>
+<%
+  }else{
+    for(int num=0; num<n; num++)   {
+    	productVO=productList.get(num);     
+   	 	if("1".equals(productVO.getUseyn()))  {
+    		view="미사용";
+    	}else{
+   			view="사용";
+    	}  
+%>    
+    <tr>
+      <td height="23" align="center" ><%=productVO.getPseq()%></td>
+      <td>   
+        <a href="#" onClick="go_detail('<%=tpage%>', '<%=productVO.getPseq()%>')">
+    	<%=productVO.getName()%>     
+   		</a>
+   	  </td>
+      <td align="right"><%=productVO.getPrice1()%></td>
+      <td align="right"><%=productVO.getPrice2()%></td>
+      <td align="right"> <%=sdf.format(productVO.getIndate())%></td>
+      <td align="right"><%=view%></td>  
+    </tr>
+<%
+    }
+  }
+%>
+</table>
+</form> 
+</article>
+<%@ include file="../common/footer.jsp"%>
+</body>
+</html>

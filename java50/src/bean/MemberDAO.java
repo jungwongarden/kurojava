@@ -59,7 +59,7 @@ public class MemberDAO {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			// 2. DB연결(->my서버설정+db명+id+pw)
-			String url = "jdbc:mysql://localhost:3306/computer";
+			String url = "jdbc:mysql://localhost:3306/bigdata";
 			String user = "root";
 			String password = "1234";
 
@@ -112,7 +112,7 @@ public class MemberDAO {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			// 2. DB연결(->my서버설정+db명+id+pw)
-			String url = "jdbc:mysql://localhost:3306/computer";
+			String url = "jdbc:mysql://localhost:3306/bigdata";
 			String user = "root";
 			String password = "1234";
 

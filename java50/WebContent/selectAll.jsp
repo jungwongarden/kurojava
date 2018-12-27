@@ -14,6 +14,7 @@
 	ArrayList<MemberDTO> list = dao.selectAll();
 	out.print("전체 회원 수는 : " + list.size() + "<br>");
 	%>
+
 	<table border="1">
 	<tr>
 		<td>아이디</td>
@@ -27,7 +28,9 @@
 		MemberDTO dto = list.get(i);
 	%>
 	<tr>
-		<td><%= dto.getId() %></td>
+		<td>
+			<a href="select.jsp?id=<%= dto.getId() %>">
+				<%= dto.getId() %></a></td>
 		<td><%= dto.getPw() %></td>
 		<td><%= dto.getName() %></td>
 		<td><%= dto.getTel() %></td>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		//1. id를 부여하여 해당 값을 가지고 옴.(단일객체 리턴)
+		var title = document.getElementById("title").value;
+		var price = document.getElementById("price").value;
+		alert(title);
+		
+		location.href="result.jsp?title="+title+"&price="+price;
+	}
+	
+	//2. 태그이름을 이용.
+	function check2() {;
+		var titles = document.getElementsByName("title");
+		alert(titles[0].value);
+		
+	}
+	
+	//3. input태그 이름내의 name속성 이용.
+	function check3() {;
+		var tags = document.getElementsByTagName("input");
+		alert(tags[0].value);
+	}
+	
+	//4. 속성값 가지고 올 때
+	function check4() {
+		var img = document.getElementById("img").getAttribute("src");
+		alert(img);
+	}
+</script>
+
+
+</head>
+<body>
+	<img id="img" src="img/yes.png" alt="나는 설명...." width="200" height="200"> <br>
+	책제목:	<input type="text" name="title" id="title"><br> 
+	책가격:	<input type="text" name="price" id="price"><br>
+	<button type="button" onclick="check()" >ID로 전송</button>
+	
+	<hr color="red">
+	<button type="button" onclick="check2()" >태그이름으로 전송</button>
+	
+	<hr color="red">
+	<button type="button" onclick="check3()" >NAME으로 전송</button>
+
+	<hr color="red">
+	<button type="button" onclick="check4()" >속성을 찾아라</button>
+
+
+
+</body>
+</html>

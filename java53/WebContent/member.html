@@ -7,17 +7,31 @@
 	function login() {
 		var id = "300";
 		var pw = "300";
-
+		id = document.getElementById("id").value;
+		pw = document.getElementById("pw").value;
 		
+		attr = document.getElementById("img").getAttribute("src");
+		alert(attr);
 		
-		location.href = "confirm.jsp?id=" + id + "&pw=" + pw;
+		/* 리턴이 배열 형태 */
+		test = document.getElementsByName("test");
+		alert(test[0].value);
+		
+		input = document.getElementsByTagName("input");
+		alert(input[0].value);
+		alert(input[1].value);
+		alert(input[2].value);
+		
+		//location.href = "confirm.jsp?id=" + id + "&pw=" + pw;
 	}
 </script>
 </head>
 <body>
 
-	<img src="a.png"> <!-- 속성. -->
-	<input type="text" name="id" id="id"><br>
+	<img id="img" src="a.jpg">
+	<input type="text" name="id" id="id" value="tttt"><br>
+	<input type="text" name="test" id="test" value="test"><br>
+	<input type="text" name="pw" id="pw" value="ggg"><br>
 	<button type="button" onclick="login()">로그인 처리....</button>
 </body>
 </html>

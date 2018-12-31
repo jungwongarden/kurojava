@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var name = "박아무개";
+	var age = 100;
+	var list = [ "자장면", "우동" ];
+	document.write("나의 이름은 " + name + "<br>");
+	document.write("나의 나이는 " + age + "<br>");
+
+	function call() {
+		/* document.write("나를 호출했군요."); */
+		alert("나를 호출했군요...");
+	}
+
+	//call();
+	
+	function call2() {
+		var name2 = prompt("이름을 입력해주세요.");
+		console.log("내가 입력받은 이름은 " + name2)
+	}
+</script>
+
+
+</head>
+<body>
+	<button type="button" onclick="alert('hi.....!!!!!!')">나는
+		버튼1...</button>
+	<br>
+	<button type="button" onclick="cal()">나는 버튼2...</button><br>
+	<button type="button" onclick="call2()">나는 버튼3...</button>
+</body>
+</html>

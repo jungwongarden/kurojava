@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function order1() {
+		pId = document.getElementById("p1").innerHTML;
+		uId = document.getElementById("u1").innerHTML;
+		location.href="order.jsp?pId=" + pId +"&uId=" + uId;
+	}
+	
+	function order2() {
+		pId = document.getElementById("p2").innerHTML;
+		uId = document.getElementById("u2").innerHTML;
+		location.href="order.jsp?pId=" + pId +"&uId=" + uId;
+	}
+
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr align="center">
+			<td width="100" bgcolor="yellow">제품번호</td>
+			<td width="200" bgcolor="pink">고객번호</td>
+			<td width="100" bgcolor="green">구매하기</td>
+		</tr>
+		<tr align="center">
+			<td width="100" bgcolor="yellow" id="p1">1</td>
+			<td width="200" bgcolor="pink" id="u1">a100</td>
+			<td width="100" bgcolor="green">
+				<button type="button" onclick="order1()">
+					<img src="img/yes.png" width="100" height="100">
+				</button>	
+				<br>
+				<a href="order.jsp?pId=1&uId=a100">주문하기</a>				
+			</td>
+		</tr>
+		<tr align="center">
+			<td width="100" bgcolor="yellow" id="p2">2</td>
+			<td width="200" bgcolor="pink" id="u2">a200</td>
+			<td width="100" bgcolor="green">
+			<button type="button" onclick="order2()">
+					<img src="img/yes.png" width="100" height="100">
+			</button>
+			<br>
+			<a href="order.jsp?pId=2&uId=a200">주문하기</a>		
+			</td>
+		</tr>
+	</table>
+
+
+
+
+
+
+
+
+</body>
+</html>

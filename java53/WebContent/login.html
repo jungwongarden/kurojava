@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var id = prompt("당신의 id는 ", "id는 5글자 이상");
+	var pw = prompt("당신의 pw는 ", "pw는 4글자 이하");
+	
+	var oriId = "admin";
+	var oriPw = "1234";
+	if((id == oriId) && (pw == oriPw)){
+		/* alert("로그인 인증되었습니다."); */
+		location.href="yes.html";
+	}else{
+		/* alert("로그인 인증되지 않았습니다.") */
+		location.href="no.html";
+	}
+
+
+</script>
+
+
+
+
+</head>
+<body>
+</body>
+</html>

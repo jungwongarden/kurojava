@@ -24,12 +24,19 @@
 	function check3() {;
 		var tags = document.getElementsByTagName("input");
 		alert(tags[0].value);
+		alert(tags[1].value);
 	}
 	
 	//4. 속성값 가지고 올 때
 	function check4() {
 		var img = document.getElementById("img").getAttribute("src");
 		alert(img);
+	}
+	
+	//5. a태그 이용하는 방법
+	function check4() {
+		var img = document.getElementById("img").getAttribute("src");
+		location.href="result2.jsp?img="+img;
 	}
 </script>
 

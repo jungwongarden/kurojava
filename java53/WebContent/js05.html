@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+/* 아래는 모두 함수로 만들어 호출하여 처리
+1) 자바 스크립트로 입력을 받아서 
+    네이버, 다음, 구글 사이트로  각각 링크*/
+function logic(site) {
+	if(site == '네이버'){
+		location.href="http://www.naver.com";
+	}else if(site == '다음'){
+		location.href="http://www.daum.net";
+	}else if(site == '구글'){
+		location.href="http://www.google.com";
+	}else{
+		location.href="http://www.kgitbank.com";
+	}
+}
+
+function site() {
+	var site = prompt("사이트명을 입력하세요.");
+	logic(site);
+}
+
+/*
+2) input으로 입력을 받아서
+    네이버, 다음, 구글 사이트로 각각 링크*/
+function site2() {
+	var site = document.getElementById("site").value;
+	logic(site);
+}
+
+</script>
+</head>
+<body>
+
+사이트명을 입력: <input type="text" name="site" id="site">
+<button type="button" onclick="site2()">사이트 연결-input으로 입력</button>
+<br>
+<button type="button" onclick="site()">사이트 연결-prompt로 입력</button>
+</body>
+</html>

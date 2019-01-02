@@ -6,12 +6,13 @@ function call1() {
 	
 	var a = document.getElementById("a");
 	a.innerHTML = result1;
-	/*var test = a.innerHTML;*/
-	
-	var num1 = document.getElementById("num1");
+	alert(a.innerHTML);
+//	var test = a.innerHTML;
+
+var num1 = document.getElementById("num1");
 	num1.value = result1;
 //	var test2 = num1.value;
-	
+
 }
 function call2() {
 	var x = prompt("숫자1를 입력하세요.");
@@ -26,6 +27,14 @@ function call2() {
 	var num2 = document.getElementById("num2");
 	num2.value = result2;
 }
+function send() {
+	var form = document.getElementById("form");
+	var num1v = document.getElementById("num1").value;
+	var num2v = document.getElementById("num2").value;
+	form.action = "jsp02.jsp?num1=" + num1v +"&num2=" + num2v;
+	form.submit();
+}
+
 function addNum(x) {
 	return x + 100;
 }

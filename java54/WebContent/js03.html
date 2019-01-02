@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function work() {
+		var he1 = document.querySelector("#hello1").value;
+		alert(he1);
+		var a = document.querySelector("a");
+		alert(a);
+		var list = document.querySelectorAll("input");
+		console.log(list[0].value);
+		list[4].value = "ok";
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<a href="naver.com?id=100">네이버로</a><br>
+	hello1: <input type="text" id="hello1" class="c1" placeholder="영어로."><br>
+	hello2: <input type="text" id="hello2" class="c2" value="hello2"><br>
+	hello3: <input type="text" id="hello3" class="c1" value="hello3"><br>
+	hello4: <input type="text" id="hello4" class="c2" value="hello4"><br>
+	hello5: <input type="text" id="hello5" class="c1" value="hello5"><br>
+	<button onclick="work()" id="welcome">환영합니다.</button>
+</body>
+</html>

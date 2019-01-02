@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function add() {
+		var h3 = document.createElement("h3");
+		var text = document.createTextNode("나는 홍길동입니다.");
+		h3.appendChild(text);
+		document.body.appendChild(h3);
+	}
+	function add2() {
+		var img = document.createElement("img");
+		img.src = "002.png";
+		img.width = 100;
+		img.height = 100;
+		document.body.appendChild(img);
+		alert(img.src);
+	}
+</script>
+</head>
+<body>
+	<a href="#" onclick="add()">나를 누르세요.-1</a>
+	<br>
+	<br>
+	<a href="#" onclick="add2()">나를 누르세요.-2</a>
+	<br>
+	<br>
+
+
+</body>
+</html>

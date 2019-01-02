@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+
+
+	function check() {
+
+		var checkBoxList2 = document.querySelectorAll("input[type=radio]");
+
+		/* var result = document.querySelector("input[type=text]"); */
+		var result1 = document.querySelector(".result1");
+		var result2 = document.querySelector(".result2");
+		result2.value = result1.value;
+		result2.style.color = "red";
+		result2.style.background = "yellow";
+		
+		for (var i = 0; i < checkBoxList2.length; i++) {
+
+			if (checkBoxList2[i].checked) {
+
+				checkValue = checkBoxList2[i].value;
+			}
+		}
+		result.value = checkValue;
+	}
+</script>
+
+</head>
+
+<body>
+
+	<form>
+		<input type="radio" value="111" name="name">111<br> 
+		<input type="radio" value="222" name="name">222<br> 
+		<input type="text" name="result" class="result1" value="시작합니다.1" ><br> 
+		<input type="text" name="result2" class="result2" value="시작합니다.2"><br> 
+		<input type="button" value="체크값 넣기" onclick="check()">
+	</form>
+
+</body>
+
+
+
+</html>

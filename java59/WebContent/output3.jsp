@@ -63,6 +63,56 @@
  시간만 길게 <fmt:formatDate value="${date}" type="time" dateStyle="full"/><br>
  날짜 시간 둘 다 길게 <fmt:formatDate value="${date}" type="both" dateStyle="full"/><br>
  
+ <hr color="red">
+ <sql:setDataSource
+ 	url="jdbc:mysql://localhost:3306/bigdata"
+ 	driver = "com.mysql.jdbc.Driver"
+ 	user="root"
+ 	password="1234"
+ 	scope="application" 
+ 	var="db"
+ />
+<%--  <sql:update dataSource="${db}">
+ 	insert into member values ('gold','gold','gold','gold')
+ </sql:update> --%>
+ 
+ <sql:query var="list" dataSource="${db}">
+ 	select * from member
+ </sql:query>
+ 
+ <c:forEach var="mem" items="${list.rows}">
+ 	${mem}<br>
+ </c:forEach>
+ 
+ <hr color="red">
+ <c:set var="str" value="jspStudy :: the whole new worldl!!!" />
+ 길이 ${fn:length(str)}<br>
+ 글자추출  ${fn:substring(str, 0, 8)}<br>
+ 이후추출  ${fn:substringAfter(str, "jspStudy")}<br>
+ 이전추출  ${fn:substringBefore(str, "the")}<br>
+ 대문자로  ${fn:toUpperCase(str)}<br>
+ 소문자로  ${fn:toLowerCase(str)}<br>
+ 글자변환  ${fn:replace(str, "jsp", "안드로이드")}<br>
+ 글자위치  ${fn:indexOf(str, "the")}<br>
+ 글자확인  ${fn:contains(str, "the")}<br>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  <br>

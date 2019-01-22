@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원가입화면입니다.</h1>
+<hr color="blue" size="5"  width="200">
+<form action="member.jsp">
+아이디: <input type="text" name="id" placeholder="아이디는 4글자 이상"><br>
+패스워드: <input type="password" name="pw" placeholder="패스워드는 영어 숫자 혼용 8글자 이내"><br>
+이름: <input type="text" name="name"><br>
+연락처: <input type="number" name="tel"><br>
+성별: <input type="radio" name="gender" value="남자">남
+	    <input type="radio" name="gender" value="여자">여
+<br>
+주소: <select name="addr">
+			<option>서울특별시</option>
+			<option>경기도</option>
+			<option>부산</option>
+			<option>광주</option>
+			<option selected>제주도</option>
+		</select>
+<br>
+취미: <input type="checkbox" name="hobby" value="run">달리기
+		<input type="checkbox" name="hobby" value="mountain">등산
+		<input type="checkbox" name="hobby" value="sleep">잠자기
+<br>
+하고 싶은 말:
+	<textarea rows="10" cols="30" name="word"  placeholder="하고 싶은 말을 쓰세요:"> </textarea>
+<input type="submit" value="회원가입완료">
+</form>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

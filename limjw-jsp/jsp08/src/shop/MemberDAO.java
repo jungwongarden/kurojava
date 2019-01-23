@@ -2,9 +2,49 @@ package shop;
 
 //JAVA-DB-Connectivity(JDBC)
 import java.sql.*;
+import java.util.ArrayList;
 
 public class MemberDAO {
 
+	public ArrayList<MemberDTO> selectAll() throws Exception {
+		// 1. 드라이버 셋팅
+		Class.forName("com.mysql.jdbc.Driver");
+
+		// 2. DB연결
+		String url = "jdbc:mysql://localhost:3306/shop"; // db명
+		String user = "root";
+		String password = "1234";
+		Connection con = DriverManager.getConnection(url, user, password);
+
+		// 3. SQL문 객체화
+		String sql = "select * from member";
+		PreparedStatement ps = con.prepareStatement(sql);
+
+		// 4. SQL문 실행 요청
+		ResultSet rs = ps.executeQuery();
+		
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		while(rs.next()) {
+			MemberDTO dto2 = new MemberDTO();
+			String id = rs.getString(1);
+			String pw = rs.getString(2);
+			String name = rs.getString(3);
+			String tel = rs.getString(4);
+			
+			dto2.setId(id);
+			dto2.setPw(pw);
+			dto2.setName(name);
+			dto2.setTel(tel);
+			
+			list.add(dto2);
+		}
+		ps.close();
+		con.close();
+		
+		
+		return list;
+	}
+	
 	public MemberDTO select(MemberDTO dto) throws Exception {
 		// 1. 드라이버 셋팅
 		Class.forName("com.mysql.jdbc.Driver");

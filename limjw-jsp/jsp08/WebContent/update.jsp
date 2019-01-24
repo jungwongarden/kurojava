@@ -12,7 +12,8 @@
 </head>
 <body>
 	<center>
-		<font color="red" size="6">게시글 확인</font>
+	<form action="update2.jsp">
+		<font color="red" size="6">게시글 수정</font>
 		<table border="1" bordercolor="pink">
 			<%
 				String id = request.getParameter("id");
@@ -24,20 +25,31 @@
 			%>
 			<tr>
 				<td width="100">아이디</td>
-				<td width="200"><%=dto2.getId()%></td>
+				<td width="200">
+					<input type="text" name="id" 
+						value="<%=dto2.getId()%>"
+						readonly="readonly"
+						>
+				</td>
 			</tr>
 
 			<tr>
 				<td>제 목</td>
-				<td><%=dto2.getTitle()%></td>
+				<td>
+					<input type="text" name="title" value="<%=dto2.getTitle()%>">
+				</td>
 			</tr>
 			<tr>
 				<td>내 용</td>
-				<td><%=dto2.getContent()%></td>
+				<td>
+					<input type="text" name="content"
+						value="<%=dto2.getContent()%>"></td>
 			</tr>
 			<tr>
 				<td>글쓴이</td>
-				<td><%=dto2.getUser()%></td>
+				<td>
+					<input type="text" name="user"
+						value="<%=dto2.getUser()%>"></td>
 			</tr>
 			<tr>
 				<td>이미지</td>
@@ -45,6 +57,8 @@
 
 			</tr>
 		</table>
+				<input type="submit" value="게시물 수정하기">
+		</form>
 		<br> 
 			<a href=delete.jsp?id=<%= id %>>
 				<img src=img/delete.png width="100" height="100">

@@ -12,6 +12,8 @@
 </head>
 <body>
 	<center>
+	
+	
 		<table border="1" borderColor="red">
 			<tr align="center">
 				<td width="50">번호</td>
@@ -38,6 +40,7 @@
 				}
 			%>
 		</table>
+
 	</center>
 </body>
 </html>

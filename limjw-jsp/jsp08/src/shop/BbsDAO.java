@@ -2,9 +2,50 @@ package shop;
 
 //JAVA-DB-Connectivity(JDBC)
 import java.sql.*;
+import java.util.ArrayList;
 
 public class BbsDAO {
 
+	public ArrayList<BbsDTO> selectAll() throws Exception {
+		
+		// 1. 드라이버 셋팅
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		// 2. DB연결
+		String url = "jdbc:mysql://localhost:3306/shop"; // db명
+		String user = "root";
+		String password = "1234";
+		Connection con = DriverManager.getConnection(url, user, password);
+		
+		// 3. SQL문 객체화
+		String sql = "select * from bbs";
+		PreparedStatement ps = con.prepareStatement(sql);
+		
+		// 4. SQL문 실행 요청
+		ResultSet rs = ps.executeQuery();
+		
+		ArrayList<BbsDTO> list = new ArrayList<BbsDTO>();
+		
+		while(rs.next()) {
+			BbsDTO dto2 = new BbsDTO();
+			String id = rs.getString(1);
+			String title = rs.getString(2);
+			String content = rs.getString(3);
+			String user2 = rs.getString(4);
+			
+			dto2.setId(id);
+			dto2.setTitle(title);
+			dto2.setContent(content);
+			dto2.setUser(user2);
+			list.add(dto2);
+			
+		}
+		ps.close();
+		con.close();
+		
+		
+		return list;
+	}
 	public BbsDTO select(BbsDTO dto) throws Exception {
 		// 1. 드라이버 셋팅
 		Class.forName("com.mysql.jdbc.Driver");

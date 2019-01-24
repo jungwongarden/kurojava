@@ -8,6 +8,10 @@ public class BbsDTO {
 	//알트+쉬프트+s+r
 	//(get/set메소드 자동 생성)
 	
+	@Override
+	public String toString() {
+		return id + " " + title + " " + content + " " + user;
+	}
 	
 	public String getId() {
 		return id;

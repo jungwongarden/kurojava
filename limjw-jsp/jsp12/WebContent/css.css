@@ -1,0 +1,78 @@
+@charset "UTF-8";
+#top2{
+	border: 10px inset green;
+	box-shadow: 10px 20px aqua;
+	border-radius: 10px 90px;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	width: 150px;
+	height: 100px;
+	background-color: black;
+	color: white;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+	text-decoration: overline;
+	color: yellow;
+	font-weight: bold;
+}
+#top li:hover{
+	color: yellow;
+	font-weight: bold;
+}
+#total{ /* 컨트롤+쉬프트+/ 자동주석
+		직접선택자: id, class, tag
+		 */
+	width: 350px;
+	background-color: lime;
+	text-align: center;
+}
+#top li:nth-child(2n){ 
+	background-color: red;
+	text-align: center;
+}
+#top li:nth-child(2n+1){
+	text-align: center;
+	background-color: lime;
+}
+#top li:first-child{
+	border-radius: 20px 0 0 20px;
+}
+#top li:last-child{
+	border-radius: 0 20px 20px 0;
+}
+
+#top li{
+	background: orange;
+	list-style: none;
+	float: left;
+	padding: 5px;
+}
+#top{
+	padding-top: 1px;
+	width: 350px;
+	background-color: pink;
+	height: 50px;
+	color:white;
+}
+#content{
+	padding-top: 20px;
+	width: 350px;
+	background-color: yellow;
+	height: 200px;
+}
+#bottom{
+	height: 50px;
+	width: 350px;
+	background-color: blue;
+	color: white;
+}
+#company{
+	height: 50px;
+	width: 350px;
+	background-color: red;
+}

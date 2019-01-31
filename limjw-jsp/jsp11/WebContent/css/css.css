@@ -1,0 +1,46 @@
+@charset "UTF-8";
+	a{
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: overline;
+	}
+	a:visited{
+		color: lime;
+	}
+	
+	#info:hover{
+		background-color: lime;
+		border-color: green;
+		border-style: dotted;
+		border-radius: 20px;
+	}
+
+	#info	{
+		height : 50px;
+		width : 500px;
+		text-align: center;
+		background-color: white;
+		color : blue;
+		font-family: "궁서";
+		font-style: italic;
+		font-weight: bold;
+		font-size: xx-large;
+	}
+	
+	#select {
+		background-color: yellow;
+		visibility: hidden;
+	}
+
+	td {
+		color: blue;
+		background-color: #e8df96;
+	}
+	#img {
+		color:green;
+		background-color: red;
+	}
+	.pro{
+		color:red;
+	}

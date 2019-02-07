@@ -8,32 +8,28 @@
 <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		//https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.chosun.com%2Fsite%2Fdata%2Frss%2Fent.xml&api_key=rooa9cfdnkctmsnpiftxnozlzfyaunxvudzwajoq
 		$("#b1").click(function() {
-			$("h1").slideUp(10000);
-		});
-		$("#b2").click(function() {
-			$("h1").slideDown(10000);
-		});
-		$("#b3").click(function() {
-			$("h1").slideToggle(10000);
+			$.ajax({
+				url: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fwww.chosun.com%2Fsite%2Fdata%2Frss%2Fent.xml&api_key=rooa9cfdnkctmsnpiftxnozlzfyaunxvudzwajoq",
+				dataType: "json",
+				data: {
+					url: "http://www.chosun.com/site/data/rss/ent.xml",
+					api_key: "rooa9cfdnkctmsnpiftxnozlzfyaunxvudzwajoq",
+					count: 20
+					},
+				success: function(result) {
+					$("h5").text("조선일보 연예 사이트 연결 성공!!");
+				}
+			}
 		});
 	});
 </script>
-<style type="text/css">
-h1 {
-	width: 300px;
-	height: 500px;
-	background-color: yellow;
-	border: 3px double lime;
-}
-</style>
+
 </head>
 <body>
-	<button id="b1">슬라이드 업</button>
-	<button id="b2">슬라이드 다운</button>
-	<button id="b3">슬라이드 토글</button>
-	<br>
-	<h1>내가 움직여요!!!!!</h1>
+	<button id="b1">연예기사</button>
+	<h5></h5>
 </body>
 </html>
 

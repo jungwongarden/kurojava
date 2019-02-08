@@ -1,5 +1,9 @@
+<%@page import="bean.ProductDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +27,15 @@
             </ul>
         </div>
         <div id="content">
-           여기는 상품정보 화면... 
+          <jsp:useBean id="dao" class="bean.ProductDAO"></jsp:useBean>
+          <%
+         	ArrayList<ProductDTO> list = dao.totalList();
+          %>
+         <c:set var="list" value="<%= list %>"></c:set>
+         <c:forEach var="dto" items="${list}">
+         	${dto.id}, ${dto.title}, ${dto.content}, ${dto.price}, ${dto.img}<br>
+         </c:forEach>
+          
         </div>
         <div id="bottom">나는 아래</div>
         <div id="company">싱싱쇼핑몰</div>

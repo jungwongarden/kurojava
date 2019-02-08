@@ -1,0 +1,74 @@
+@charset "UTF-8";
+#total {
+    width: 800px;
+    background: lime;
+}
+
+#top {
+    height: 100px;
+    background: lime;
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 200px;
+}
+
+#content {
+    height: 100px;
+    background: pink;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+#bottom {
+    line-height: 200px;
+    background: green;
+}
+
+#company {
+    line-height: 50px;
+    background: yellow;
+    text-align: center;
+}
+
+#top li {
+    list-style: none;
+    float: left;
+    padding: 15px;
+}
+
+#top li:nth-child(2n) {
+    background: orange;
+}
+
+#top li:nth-child(2n+1) {
+    background: red;
+}
+
+#top li:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#top li:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.c {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    display: inline-block;
+}
+
+#top2 {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: 250px;
+    height: 100px;
+    background: black;
+    color: white;
+    border-top: 5px solid aqua;
+    border-bottom: 10px double white;
+    border-radius: 100px 10px;
+    box-shadow: 10px 10px yellow;
+}

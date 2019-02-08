@@ -11,7 +11,8 @@
 <jsp:setProperty property="*" name="dto"/> <!-- 액션태그 -->
 
 <hr color="red">
-당신이 입력한 가수는 : ${dto.singer}<br> <!-- dto.getSinger()  -->
+당신이 입력한 가수는 : ${dto.singer}<br> 
+<!-- dto.getSinger()  -->
 당신이 입력한 곡명은 : ${dto.title}<br>
 
 

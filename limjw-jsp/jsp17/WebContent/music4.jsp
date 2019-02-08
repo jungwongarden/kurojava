@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="music4.jsp">
-가수이름: <input type="text" name="singer"><br>
-곡이름: <input type="text" name="title"><br>
-<button type="submit">저작권 등록</button>
-</form>
+<%
+	String singer = request.getParameter("singer");
+	session.setAttribute("singer", singer);
+%>
+<a href="music5.jsp">singer페이지로.....</a>
+
+
 
 
 

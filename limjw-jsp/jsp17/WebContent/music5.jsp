@@ -7,18 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="music4.jsp">
-가수이름: <input type="text" name="singer"><br>
-곡이름: <input type="text" name="title"><br>
-<button type="submit">저작권 등록</button>
-</form>
-
-
-
-
-
-
-
-
+<%= session.getAttribute("singer") %><br>
+${singer} 
+<!-- 세션 속성 값 바로 출력 
+	${속성이름}
+-->
 </body>
 </html>

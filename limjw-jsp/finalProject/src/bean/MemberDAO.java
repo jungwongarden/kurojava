@@ -5,7 +5,15 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class MemberDAO {
-
+	DBConnectionMgr dbcp;
+	Connection con;
+	PreparedStatement ps;
+	ResultSet rs;
+	
+	public MemberDAO() {
+		dbcp = DBConnectionMgr.getInstance();
+	}
+	
 	public boolean loginCheck(MemberDTO dto) throws Exception {
 		// 1. 드라이버 셋팅
 		Class.forName("com.mysql.jdbc.Driver");
@@ -173,14 +181,7 @@ public class MemberDAO {
 	}
 
 	public void insert(MemberDTO dto) throws Exception {
-		// 1. 드라이버 셋팅
-		Class.forName("com.mysql.jdbc.Driver");
-
-		// 2. DB연결
-		String url = "jdbc:mysql://localhost:3306/shop"; // db명
-		String user = "root";
-		String password = "1234";
-		Connection con = DriverManager.getConnection(url, user, password);
+		con = dbcp.getConnection();
 
 		// 3. SQL문 객체화
 		String sql = "insert into member values (?,?,?,?)";

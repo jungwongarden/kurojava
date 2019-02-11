@@ -1,4 +1,8 @@
 @charset "UTF-8";
+input{
+	color:  blue;
+	font: 30px 궁서 bold;
+}
 #t1{
 	color: blue;
 	font: 30px 궁서 bold;
@@ -11,9 +15,9 @@
 }
 
 #total {
+	background-image: url(img/back.png);
 	height: 800px;
     width: 800px;
-    background: lime;
 }
 
 #top {
@@ -26,7 +30,6 @@
 
 #content {
     height: 800px;
-    background-image: url(img/back.png);
     padding-left: 50px;
     padding-top: 50px;
 }

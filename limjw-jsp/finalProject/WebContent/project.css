@@ -1,5 +1,17 @@
 @charset "UTF-8";
+#t1{
+	color: blue;
+	font: 30px 궁서 bold;
+	background-image: url(img/back.png);
+}
+#t2{
+	color: red;
+	font: 30px 궁서 bold;
+	background: lime;
+}
+
 #total {
+	height: 800px;
     width: 800px;
     background: lime;
 }
@@ -13,19 +25,20 @@
 }
 
 #content {
-    height: 100px;
-    background: pink;
+    height: 800px;
+    background-image: url(img/back.png);
     padding-left: 50px;
     padding-top: 50px;
 }
 
 #bottom {
-    line-height: 200px;
+    height: 50px;
     background: green;
 }
 
+
 #company {
-    line-height: 50px;
+    height: 50px;
     background: yellow;
     text-align: center;
 }

@@ -11,7 +11,6 @@ public class ProductDAO {
 	PreparedStatement ps;
 	ResultSet rs;
 	
-	
 	public ProductDAO() {
 		dbcp = DBConnectionMgr.getInstance();
 	}
@@ -28,7 +27,6 @@ public class ProductDAO {
 		rs = ps.executeQuery();
 		
 		ProductDTO dto = null;
-		
 		while(rs.next()) {
 			dto = new ProductDTO();
 			dto.setId(rs.getString(1));

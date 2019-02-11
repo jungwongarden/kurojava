@@ -32,13 +32,18 @@
          	ArrayList<ProductDTO> list = dao.totalList();
           %>
          <c:set var="list" value="<%= list %>"></c:set>
-         <c:forEach var="dto" items="${list}">
-         	${dto.id}, ${dto.title}, ${dto.content}, ${dto.price}, ${dto.img}<br>
-         </c:forEach>
-          
+         <table border="1" bordercolor="red">
+	         <c:forEach var="dto" items="${list}">
+	         	<tr align="center">
+	         		<td width="50" id="t1">${dto.id}</td>
+	         		<td width="100" id="t2">${dto.title}</td>
+	         		<td width="200" id="t3">${dto.content}</td>
+	         		<td width="100" id="t4">${dto.price}원</td>
+	         		<td id="t5"><img src="${dto.img}" width="200" height="150"></td>
+	         	</tr>
+	         </c:forEach>
+          </table>
         </div>
-        <div id="bottom">나는 아래</div>
-        <div id="company">싱싱쇼핑몰</div>
     </div>
 </body>
 </html>

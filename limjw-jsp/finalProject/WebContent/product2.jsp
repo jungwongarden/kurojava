@@ -49,7 +49,7 @@
 						height="150"></td>
 				</tr>
 			</table>
-				<a href="basket.jsp?id=<%=dto2.getId()%>&img=<%=dto2.getImg()%>">장바구니에 넣기</a>
+				<a href="basket.jsp?id=<%=dto2.getId()%>&img=<%=dto2.getImg()%>&price=<%=dto2.getPrice()%>">장바구니에 넣기</a>
 			</center>
 		</div>
 	</div>

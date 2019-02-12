@@ -12,25 +12,11 @@
 <body>
 	<div id="total">
 		<div id="top2">
-		<h5>장바구니의 현재<h5> 
-		총 결제금액은
-			<%
-				if(session.getAttribute("pay") == null){
-					out.print("0");
-				}else{
-					out.print(session.getAttribute("pay"));
-				}
-			%>
-		원
+		<jsp:include page="total.jsp"></jsp:include>
 		</div>
-		<div id="top">
-			<ul>
-				<li><a href="member.jsp">회원가입</a></li>
-				<li><a href="product.jsp">제품정보</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
-				<li><a href="basket.jsp">장바구니</a></li>
-			</ul>
-		</div>
+		 <div id="top">
+          <jsp:include page="top.jsp"></jsp:include>
+        </div>
 		<div id="content">
 			<%
 				if (request.getParameter("id") != null) {
@@ -72,6 +58,7 @@
 			<%
 				} else {
 					ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) session.getAttribute("basket");
+					if(list != null){
 			%>
 			<table border="1" bordercolor="green" width="450">
 				<%
@@ -91,10 +78,15 @@
 					</form>
 				</tr>
 				<%
-					}
-					}
+					}//for
 				%>
 			</table>
+			<%
+					}else{
+						out.print("아직 장바구니에 없습니다..");
+					}//if list 존재확인
+				}//if session 존재확인
+			%>
 		</div>
 	</div>
 </body>

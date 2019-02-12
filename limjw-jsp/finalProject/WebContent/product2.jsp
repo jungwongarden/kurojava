@@ -13,15 +13,12 @@
 </head>
 <body>
 	<div id="total">
-		<div id="top2">장바구니 내용..</div>
-		<div id="top">
-			<ul>
-				<li><a href="member.jsp">회원가입</a></li>
-				<li><a href="product.jsp">제품정보</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
-				<li><a href="basket.jsp">장바구니</a></li>
-			</ul>
+		<div id="top2">
+		<jsp:include page="total.jsp"></jsp:include>
 		</div>
+		 <div id="top">
+          <jsp:include page="top.jsp"></jsp:include>
+        </div>
 		<div id="content">
 			<jsp:useBean id="dao" class="bean.ProductDAO"></jsp:useBean>
 			<jsp:useBean id="dto" class="bean.ProductDTO"></jsp:useBean>

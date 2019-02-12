@@ -11,7 +11,18 @@
 </head>
 <body>
 	<div id="total">
-		<div id="top2">장바구니 내용..</div>
+		<div id="top2">
+		<h5>장바구니의 현재<h5> 
+		총 결제금액은
+			<%
+				if(session.getAttribute("pay") == null){
+					out.print("0");
+				}else{
+					out.print(session.getAttribute("pay"));
+				}
+			%>
+		원
+		</div>
 		<div id="top">
 			<ul>
 				<li><a href="member.jsp">회원가입</a></li>

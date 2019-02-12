@@ -25,7 +25,7 @@ input{
     background: lime;
     vertical-align: middle;
     display: table-cell;
-    padding-left: 200px;
+    padding-left: 1px;
 }
 
 #content {
@@ -76,13 +76,15 @@ input{
 }
 
 #top2 {
+	font: 궁서 20px bold;
+	padding-left:50px;
     position: fixed;
     top: 5px;
     right: 5px;
     width: 250px;
     height: 100px;
     background: black;
-    color: white;
+    color: yellow;
     border-top: 5px solid aqua;
     border-bottom: 10px double white;
     border-radius: 100px 10px;

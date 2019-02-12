@@ -8,6 +8,7 @@
 </head>
 <body>
 <%
+if(request.getParameter("price") != null){
 	int price = Integer.parseInt(request.getParameter("price"));
 	int count = Integer.parseInt(request.getParameter("count"));
 	
@@ -23,10 +24,9 @@
 		session.setAttribute("pay", totalPay);
 		//out.print("현재 금액까지의 지불 금액은" + totalPay + "원");
 	}
+}
 %>
 <jsp:forward page="basket.jsp"></jsp:forward>
-
-
 
 
 

@@ -14,7 +14,9 @@
 <script type="text/javascript">
 	$(function() {
 		$("#button").click(function() {
-			
+			var re = $("#re").val(); //input에 넣은 값=>val()
+			var option = $("option:selected").text(); //태그사이에 넣은 값=>text()
+			$("#reply").append('<%=session.getAttribute("id")%><img src=img/reply.png><font size=6 color=green>' + option + ':  ' + re + '</font><br>');
 		});
 	});
 </script>
@@ -43,6 +45,14 @@
 					</tr>
 				</table>
 			</c:forEach>
+			<img src="img/re.png" width="30" height="30"> 
+				<select	id="select">
+					<c:forEach var="dto" items="${list}">
+						<option>${dto.id}</option>
+					</c:forEach>
+			</select> <input type="text" name="re" id="re">
+			<button id="button">댓글 달기</button>
+			<div id="reply"></div>
 		</div>
 	</div>
 </body>

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+#button{
+	background-color: green;
+	color: white;
+	font: 30px 굴림 bold italic;
+}
+#reply{
+	background-color: yellow;
+}
 input{
 	color:  blue;
 	font: 30px 궁서 bold;

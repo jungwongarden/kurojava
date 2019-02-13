@@ -3,6 +3,7 @@ package bean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class BbsDAO {
 	DBConnectionMgr dbcp;
@@ -32,4 +33,32 @@ public class BbsDAO {
 		//4. SQL문 실행 요청
 		ps.executeUpdate();
 	}
+	
+	public ArrayList<BbsDTO> totalList() throws Exception {
+		ArrayList<BbsDTO> list = new ArrayList<BbsDTO>();
+		
+		//1. 드라이버 셋팅+DB연결
+		con = dbcp.getConnection();
+		
+		String sql = "select * from bbs";
+		ps = con.prepareStatement(sql);
+		
+		rs = ps.executeQuery();
+		
+		BbsDTO dto = null;
+		while(rs.next()) {
+			dto = new BbsDTO();
+			dto.setId(rs.getString(1));
+			dto.setTitle(rs.getString(2));
+			dto.setContent(rs.getString(3));
+			dto.setUser(rs.getString(4));
+			list.add(dto);
+		}
+		
+		//자원해제
+		dbcp.freeConnection(con, ps, rs);
+		
+		return list;
+	}
+	
 }

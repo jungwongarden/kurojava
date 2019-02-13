@@ -14,7 +14,9 @@
 <script type="text/javascript">
 	$(function() {
 		$("#button").click(function() {
-			
+			var re = $("#re").val();
+			var option = $("option:selected").text();
+			$("#div").append("<h2>" + option + ":    " + re + "</h2>");
 		});
 	});
 </script>
@@ -43,6 +45,18 @@
 					</tr>
 				</table>
 			</c:forEach>
+
+			<img src="img/re.png" width="50" height="50">
+			<form id="form">
+				<select name="select">
+				<c:forEach var="dto" items="${list}">
+					<option value="${dto.id}" id="${dto.id}">${dto.id}</option>
+				</c:forEach>
+				</select>
+				<input type="text" name="re" id="re">
+				<button id="button" type="button">댓글달기</button>
+			</form>
+			<div id="div"></div>
 		</div>
 	</div>
 </body>

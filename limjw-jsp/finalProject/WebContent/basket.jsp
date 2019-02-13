@@ -26,7 +26,8 @@
 			<%
 				//장바구니가 이미 있으면, 그 장바구니 세션의 리스트에 내 
 					//선택한 물건(dto)을 추가.
-					ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) session.getAttribute("basket");
+					ArrayList<ProductDTO> list 
+					      = (ArrayList<ProductDTO>) session.getAttribute("basket");
 					if (list == null) {
 						list = new ArrayList<>();
 					}
@@ -57,7 +58,8 @@
 			</table>
 			<%
 				} else {
-					ArrayList<ProductDTO> list = (ArrayList<ProductDTO>) session.getAttribute("basket");
+					ArrayList<ProductDTO> list = 
+							(ArrayList<ProductDTO>) session.getAttribute("basket");
 					if(list != null){
 			%>
 			<table border="1" bordercolor="green" width="450">
